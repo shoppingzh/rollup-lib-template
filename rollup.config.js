@@ -1,6 +1,6 @@
 import alias from '@rollup/plugin-alias'
 import babel from '@rollup/plugin-babel'
-// import { uglify } from 'rollup-plugin-uglify'
+import { uglify } from 'rollup-plugin-uglify'
 import sizes from '@atomico/rollup-plugin-sizes'
 
 export default {
@@ -35,8 +35,8 @@ export default {
     // 生成包大小监控
     sizes(100),
     // 代码混淆
-    // uglify({
-    //   sourcemap: false
-    // })
+    uglify({
+      sourcemap: false
+    })
   ]
 }
