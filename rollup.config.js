@@ -1,11 +1,11 @@
 import alias from '@rollup/plugin-alias'
 import babel from '@rollup/plugin-babel'
-import { uglify } from 'rollup-plugin-uglify'
 import sizes from '@atomico/rollup-plugin-sizes'
+import ts from '@rollup/plugin-typescript'
+import { terser } from 'rollup-plugin-terser'
 
 export default {
-  input: 'src/index.js',
-  // treeshake: false, // 是否开启tree shake
+  input: 'src/index.ts',
   output: {
     dir: 'dist',
     format: 'umd',
@@ -28,6 +28,7 @@ export default {
         replacement: 'src/utils'
       }]
     }),
+    ts(), 
     // 代码转译、polyfill
     babel({
       babelHelpers: 'runtime'
@@ -35,8 +36,6 @@ export default {
     // 生成包大小监控
     sizes(100),
     // 代码混淆
-    uglify({
-      sourcemap: false
-    })
+    terser()
   ]
 }
