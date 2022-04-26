@@ -2,6 +2,7 @@ import alias from '@rollup/plugin-alias'
 import babel from '@rollup/plugin-babel'
 import sizes from '@atomico/rollup-plugin-sizes'
 import ts from '@rollup/plugin-typescript'
+import beep from '@rollup/plugin-beep'
 import { terser } from 'rollup-plugin-terser'
 
 export default {
@@ -36,6 +37,8 @@ export default {
     // 生成包大小监控
     sizes(100),
     // 代码混淆
-    terser()
+    terser(),
+    // 警告
+    beep()
   ]
 }
