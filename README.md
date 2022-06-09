@@ -2,22 +2,32 @@
 
 rollup打包库的经典配置
 
-- 别名
-- 包大小监控
-- babel
-- 代码混淆与最小化
-- TypeScript支持
+- [x] 别名
+- [x] 包大小监控
+- [x] babel
+- [x] 代码混淆与最小化
+- [x] TypeScript支持
 
+开发相关配套设施
 
-## 测试结果
+- [ ] ESLint
+- [ ] Pretttier
+- [x] 单元测试支持
 
-打包：
+## 打包
 
 ```bash
 yarn build
 # npm run build
 ```
 
-使用VSCode的`LiveServer`插件打开`test.html`文件，可参看打包后的效果。
+
+## 测试
+
+```bash
+yarn test
+# npm run test
+```
+
 
 
