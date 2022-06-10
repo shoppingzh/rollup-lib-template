@@ -4,7 +4,7 @@
   "description": "rollup打包库经典配置",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build": "rollup -c",
     "test": "jest"
   },
   "repository": "git@github.com:shoppingzh/rollup-lib-template.git",
