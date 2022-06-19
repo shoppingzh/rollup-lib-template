@@ -1,3 +1,4 @@
+import { defineConfig } from 'rollup'
 import alias from '@rollup/plugin-alias'
 import babel from '@rollup/plugin-babel'
 import sizes from '@atomico/rollup-plugin-sizes'
@@ -5,7 +6,7 @@ import ts from '@rollup/plugin-typescript'
 import beep from '@rollup/plugin-beep'
 import { terser } from 'rollup-plugin-terser'
 
-export default {
+export default defineConfig({
   input: 'src/index.ts',
   output: {
     dir: 'dist',
@@ -41,4 +42,4 @@ export default {
     // 警告
     beep()
   ]
-}
+})
