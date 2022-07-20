@@ -10,7 +10,7 @@ rollup打包库的经典配置
 
 开发相关配套设施
 
-- [ ] ESLint
+- [x] ESLint(TypeScript ESLint)
 - [ ] Pretttier
 - [x] 单元测试支持
 
