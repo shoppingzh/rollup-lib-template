@@ -7,6 +7,7 @@ rollup打包库的经典配置
 - [x] babel
 - [x] 代码混淆与最小化
 - [x] TypeScript支持
+- [ ] CommonJS模块支持
 
 开发相关配套设施
 
