@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "dist"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
