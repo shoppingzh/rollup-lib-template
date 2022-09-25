@@ -1,2 +1,2 @@
-export * from './utils/date'
-export * from './utils/math'
+export * from '@/utils/date'
+export * from '@/utils/math'

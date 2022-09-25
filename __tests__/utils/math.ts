@@ -1,5 +1,4 @@
-import { add } from '../../src'
-
+import { add } from '../../src/utils/math'
 
 describe('add', () => {
   test('positive', () => {

@@ -1,3 +1,4 @@
+import * as path from 'path'
 import { defineConfig } from 'rollup'
 import alias from '@rollup/plugin-alias'
 import babel from '@rollup/plugin-babel'
@@ -5,33 +6,30 @@ import sizes from '@atomico/rollup-plugin-sizes'
 import ts from '@rollup/plugin-typescript'
 import beep from '@rollup/plugin-beep'
 import { terser } from 'rollup-plugin-terser'
+import pkg from './package.json'
+import clear from 'rollup-plugin-clear'
 
 export default defineConfig({
   input: 'src/index.ts',
   output: {
     dir: 'dist',
     format: 'umd',
-    name: 'MyLib',
-    globals: {
-      'lodash': '_',
-      '@babel/runtime-corejs2/helpers/classCallCheck': '_classCallCheck',
-      '@babel/runtime-corejs2/helpers/createClass': '_createClass'
-    }
+    name: 'MyLib'
   },
-  external: [
-    'lodash',
-    /@babel\/runtime/
-  ],
+  external: Object.keys(pkg.peerDependencies || {}),
   plugins: [
-    // 别名
     alias({
       entries: [{
-        find: '@utils',
-        replacement: 'src/utils'
+        find: '@',
+        replacement: 'src'
       }]
     }),
-    ts(), 
-    // 代码转译、polyfill
+    clear({
+      targets: ['dist']
+    }),
+    ts({
+      tsconfig: path.resolve(__dirname, './tsconfig.json'),
+    }),
     babel({
       babelHelpers: 'runtime'
     }),
@@ -40,6 +38,6 @@ export default defineConfig({
     // 代码混淆
     terser(),
     // 警告
-    beep()
+    beep(),
   ]
 })

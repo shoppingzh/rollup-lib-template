@@ -1,11 +1,7 @@
-import { isAfter } from '../../src'
+import { now } from '../../src/utils/date'
 
-
-describe('isAfter', () => {
-  test('normal', () => {
-    const a = new Date()
-    const b = new Date()
-    b.setMilliseconds(b.getMilliseconds() + 1)
-    expect(isAfter(a, b)).toBeTruthy()
+describe('now', () => {
+  it('base', () => {
+    expect(now()).toBe(Date.now())
   })
 })
