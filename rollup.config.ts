@@ -1,7 +1,7 @@
-import * as path from 'path'
+import path from 'path'
 import { defineConfig } from 'rollup'
 import alias from '@rollup/plugin-alias'
-import babel from '@rollup/plugin-babel'
+import { babel } from '@rollup/plugin-babel'
 import sizes from '@atomico/rollup-plugin-sizes'
 import ts from '@rollup/plugin-typescript'
 import beep from '@rollup/plugin-beep'
@@ -28,7 +28,7 @@ export default defineConfig({
       targets: ['dist']
     }),
     ts({
-      tsconfig: path.resolve(__dirname, './tsconfig.json'),
+      tsconfig: path.resolve(__dirname, './tsconfig.build.json'),
     }),
     babel({
       babelHelpers: 'runtime'
