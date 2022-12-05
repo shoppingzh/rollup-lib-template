@@ -1,6 +1,6 @@
-# 📦rollup-lib-template
+# 📦 rollup-lib-template
 
-rollup打包库的经典配置
+**打包配置：**
 
 - [x] 别名
 - [x] 包大小监控
@@ -9,8 +9,9 @@ rollup打包库的经典配置
 - [x] TypeScript支持
 - [ ] CommonJS模块支持
 
-开发相关配套设施
+**开发基础设施：**
 
+- [x] husky
 - [x] ESLint(TypeScript ESLint)
 - [ ] Pretttier
 - [x] 单元测试支持
@@ -18,7 +19,8 @@ rollup打包库的经典配置
 ## 打包
 
 ```bash
-yarn build
+pnpm build
+# yarn build
 # npm run build
 ```
 
@@ -26,7 +28,8 @@ yarn build
 ## 测试
 
 ```bash
-yarn test
+pnpm test
+# yarn test
 # npm run test
 ```
 
