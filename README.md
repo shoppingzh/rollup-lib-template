@@ -14,6 +14,7 @@ rollup打包库的经典配置
 - [x] ESLint(TypeScript ESLint)
 - [ ] Pretttier
 - [x] 单元测试支持
+- [x] git工作流
 
 ## 打包
 
