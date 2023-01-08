@@ -1,21 +1,17 @@
 # 📦 rollup-lib-template
 
-**打包配置：**
+**特性**
 
+- [x] git工作流（husky/commitlint/conventional-changelog）
+- [x] ESLint
+- [ ] Prettier
+- [x] 单元测试（jest）
+- [x] TypeScript支持
 - [x] 别名
 - [x] 包大小监控
 - [x] babel
 - [x] 代码混淆与最小化
-- [x] TypeScript支持
 - [ ] CommonJS模块支持
-
-**开发基础设施：**
-
-- [x] husky
-- [x] ESLint(TypeScript ESLint)
-- [ ] Pretttier
-- [x] 单元测试支持
-- [x] git工作流
 
 ## 打包
 
