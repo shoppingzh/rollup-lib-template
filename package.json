@@ -4,8 +4,10 @@
   "description": "rollup打包库经典配置",
   "main": "index.js",
   "scripts": {
+    "dev": "rollup -c --configPlugin=typescript --bundleConfigAsCjs --watch",
     "build": "rollup -c --configPlugin=typescript --bundleConfigAsCjs",
     "lint": "eslint src",
+    "format": "prettier --write ./**/*.{js,ts,jsx,tsx}",
     "test": "jest",
     "prepare": "husky install"
   },
@@ -37,6 +39,7 @@
     "husky": "^8.0.0",
     "jest": "^28.1.1",
     "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
     "rollup": "^3.5.1",
     "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-terser": "^7.0.2",

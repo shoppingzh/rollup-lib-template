@@ -3,17 +3,12 @@ module.exports = {
   root: true,
   env: {
     node: true,
-    browser: true
+    browser: true,
   },
   parser: '@typescript-eslint/parser',
-  plugins: [
-    '@typescript-eslint'
-  ],
-  extends: [
-    '@shoppingzh/eslint-config',
-    'plugin:@typescript-eslint/recommended'
-  ],
+  plugins: ['@typescript-eslint'],
+  extends: ['@shoppingzh/eslint-config', 'plugin:@typescript-eslint/recommended', 'prettier'],
   rules: {
-    'array-bracket-newline': [0]
+    'array-bracket-newline': [0],
   },
 }
