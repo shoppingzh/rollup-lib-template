@@ -1,5 +1,7 @@
 # 📦 rollup-lib-template
 
+开箱即用的rollup库模板。
+
 ## 🚀 特性
 
 - [x] git工作流 (husky/commitlint/conventional-changelog)
