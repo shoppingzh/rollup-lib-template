@@ -14,24 +14,26 @@ export default defineConfig({
   output: {
     dir: 'dist',
     format: 'umd',
-    name: 'MyLib'
+    name: 'MyLib',
   },
-  external: Object.keys(pkg.peerDependencies || {}),
+  external: Object.keys((pkg as any).peerDependencies || {}),
   plugins: [
     alias({
-      entries: [{
-        find: '@',
-        replacement: 'src'
-      }]
+      entries: [
+        {
+          find: '@',
+          replacement: 'src',
+        },
+      ],
     }),
     clear({
-      targets: ['dist']
+      targets: ['dist'],
     }),
     ts({
       tsconfig: path.resolve(__dirname, './tsconfig.build.json'),
     }),
     babel({
-      babelHelpers: 'runtime'
+      babelHelpers: 'runtime',
     }),
     // 生成包大小监控
     sizes(100),
@@ -39,5 +41,5 @@ export default defineConfig({
     terser(),
     // 警告
     beep(),
-  ]
+  ],
 })

@@ -7,8 +7,6 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
-  extends: ['@shoppingzh/eslint-config', 'plugin:@typescript-eslint/recommended', 'prettier'],
-  rules: {
-    'array-bracket-newline': [0],
-  },
+  extends: ['@shoppingzh', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  rules: {},
 }
