@@ -1,19 +1,39 @@
 # 📦 rollup-lib-template
 
-**特性**
+## 🚀 特性
 
-- [x] git工作流（husky/commitlint/conventional-changelog）
+- [x] git 工作流（husky/commitlint/conventional-changelog）
 - [x] ESLint
-- [ ] Prettier
+- [x] Prettier
 - [x] 单元测试（jest）
-- [x] TypeScript支持
+- [x] TypeScript 支持
 - [x] 别名
 - [x] 包大小监控
 - [x] babel
 - [x] 代码混淆与最小化
-- [ ] CommonJS模块支持
+- [ ] CommonJS 模块支持
 
-## 打包
+## 使用
+
+**下载项目**
+
+```bash
+git clone https://github.com/shoppingzh/rollup-lib-template.git
+```
+
+> 或者在 GitHub 中点击“Use this template”直接新建一个以此仓库为模板的新仓库。
+
+**开发**
+
+```bash
+pnpm dev
+# yarn dev
+# npm run dev
+```
+
+> 与构建不同，此脚本会监听文件变化，实时构建。
+
+**构建打包**
 
 ```bash
 pnpm build
@@ -21,12 +41,10 @@ pnpm build
 # npm run build
 ```
 
-
-## 测试
+**运行单元测试**
 
 ```bash
 pnpm test
 # yarn test
 # npm run test
 ```
-
