@@ -7,6 +7,10 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
-  extends: ['@shoppingzh', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: [
+    '@shoppingzh', //
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
   rules: {},
 }
