@@ -14,6 +14,7 @@
 - [x] 代码混淆与最小化
 - [ ] CommonJS 模块支持
 
+
 ## 🔨 使用
 
 **下载项目**
@@ -23,6 +24,13 @@ git clone https://github.com/shoppingzh/rollup-lib-template.git
 ```
 
 > 或者在 GitHub 中点击“Use this template”直接新建一个以此仓库为模板的新仓库。
+
+**准备**
+
+开始开发前，需要做如下准备：
+
+- 修改 `package.json`，修改包相关信息
+- 修改 `README.md`
 
 **开发**
 
