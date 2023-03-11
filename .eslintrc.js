@@ -10,7 +10,6 @@ module.exports = {
   extends: [
     '@shoppingzh', //
     'plugin:@typescript-eslint/recommended',
-    'prettier',
   ],
   rules: {},
 }
