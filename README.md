@@ -5,9 +5,9 @@
 ## 🚀 特性
 
 - [x] git工作流 (husky/commitlint/conventional-changelog)
-- [x] 代码美化与校验 (ESLint/Prettier)
+- [x] 代码格式化与校验
 - [x] TypeScript 支持
-- [x] 单元测试 (jest)
+- [x] 单元测试
 - [x] 别名
 - [x] 包大小监控
 - [x] babel
