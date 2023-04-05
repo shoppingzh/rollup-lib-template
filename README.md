@@ -31,6 +31,7 @@ git clone https://github.com/shoppingzh/rollup-lib-template.git
 
 - 修改 `package.json`，修改包相关信息
 - 修改 `README.md`
+- 删除 `src` `__tests__` 目录下的文件，编写自己的代码
 
 **开发**
 

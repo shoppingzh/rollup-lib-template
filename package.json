@@ -4,8 +4,8 @@
   "description": "rollup打包库经典配置",
   "main": "index.js",
   "scripts": {
-    "dev": "rollup -c --configPlugin=typescript --bundleConfigAsCjs --watch",
-    "build": "rollup -c --configPlugin=typescript --bundleConfigAsCjs",
+    "dev": "rollup -c scripts/rollup.config.ts --configPlugin=typescript={tsconfig:'scripts/tsconfig.build.json'} --bundleConfigAsCjs --watch",
+    "build": "rollup -c scripts/rollup.config.ts --configPlugin=typescript={tsconfig:'scripts/tsconfig.build.json'} --bundleConfigAsCjs",
     "lint": "eslint .",
     "format": "eslint . --fix",
     "test": "jest",
