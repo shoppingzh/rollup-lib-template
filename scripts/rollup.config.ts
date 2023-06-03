@@ -5,7 +5,7 @@ import { babel } from '@rollup/plugin-babel'
 import sizes from '@atomico/rollup-plugin-sizes'
 import ts from '@rollup/plugin-typescript'
 import beep from '@rollup/plugin-beep'
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 import pkg from '../package.json'
 import clear from 'rollup-plugin-clear'
 
