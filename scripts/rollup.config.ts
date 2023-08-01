@@ -8,6 +8,7 @@ import beep from '@rollup/plugin-beep'
 import terser from '@rollup/plugin-terser'
 import pkg from '../package.json'
 import clear from 'rollup-plugin-clear'
+import strip from '@rollup/plugin-strip'
 
 export default defineConfig({
   input: 'src/index.ts',
@@ -19,12 +20,9 @@ export default defineConfig({
   external: Object.keys((pkg as any).peerDependencies || {}),
   plugins: [
     alias({
-      entries: [
-        {
-          find: '@',
-          replacement: 'src',
-        },
-      ],
+      entries: {
+        '@': path.resolve(__dirname, '../src')
+      }
     }),
     clear({
       targets: ['dist'],
@@ -35,11 +33,15 @@ export default defineConfig({
     babel({
       babelHelpers: 'runtime',
     }),
+    // 去除console.log
+    strip({
+      include: 'src/**/*.{ts,js}'
+    }),
     // 生成包大小监控
     sizes(100),
     // 代码混淆
     terser(),
-    // 警告
+    // 警告声
     beep(),
   ],
 })
