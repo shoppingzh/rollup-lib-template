@@ -1,7 +1,7 @@
-import { hello } from '../src/index'
+import { plus } from '../src/index'
 
-describe('hello', () => {
-  it('hello', () => {
-    expect(hello()).toBe('hello')
+describe('plus', () => {
+  it('base', () => {
+    expect(plus(1, 1)).toBe(2)
   })
 })
