@@ -2,6 +2,7 @@ import path from 'path'
 import { defineConfig } from 'rollup'
 import alias from '@rollup/plugin-alias'
 import { babel } from '@rollup/plugin-babel'
+import commonjs from '@rollup/plugin-commonjs'
 import sizes from '@atomico/rollup-plugin-sizes'
 import ts from '@rollup/plugin-typescript'
 import beep from '@rollup/plugin-beep'
@@ -14,10 +15,10 @@ export default defineConfig({
   input: 'src/index.ts',
   output: {
     dir: 'dist',
-    format: 'umd',
+    format: 'esm',
     name: 'MyLib',
   },
-  external: Object.keys((pkg as any).peerDependencies || {}),
+  external: Object.keys(pkg.peerDependencies || {}),
   plugins: [
     alias({
       entries: {
@@ -27,9 +28,8 @@ export default defineConfig({
     clear({
       targets: ['dist'],
     }),
-    ts({
-      tsconfig: path.resolve(__dirname, '../tsconfig.json'),
-    }),
+    commonjs(),
+    ts(),
     babel({
       babelHelpers: 'runtime',
     }),

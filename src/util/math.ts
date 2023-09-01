@@ -1,3 +1,3 @@
-export function plus(a: number, b: number) {
+export async function plus(a: number, b: number) {
   return a + b
 }
