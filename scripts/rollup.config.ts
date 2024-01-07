@@ -18,7 +18,7 @@ export default defineConfig({
     format: 'esm',
     name: 'MyLib',
   },
-  external: Object.keys(pkg.peerDependencies || {}),
+  external: Object.keys(pkg.peerDependencies || {}).map(pkg => new RegExp(`^${pkg}`)),
   plugins: [
     alias({
       entries: {
@@ -31,7 +31,9 @@ export default defineConfig({
     commonjs(),
     ts(),
     babel({
+      exclude: ['node_modules'],
       babelHelpers: 'runtime',
+      extensions: ['.ts'],
     }),
     // 去除console.log
     strip({
@@ -40,7 +42,7 @@ export default defineConfig({
     // 生成包大小监控
     sizes(100),
     // 代码混淆
-    terser(),
+    // terser(),
     // 警告声
     beep(),
   ],

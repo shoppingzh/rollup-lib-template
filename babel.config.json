@@ -1,9 +1,16 @@
 {
   "presets": [
     "@babel/preset-typescript",
-    ["@babel/preset-env"]
+    ["@babel/preset-env", {
+      "debug": true
+    }]
   ],
   "plugins": [
-    ["@babel/plugin-transform-runtime"]
+    ["@babel/plugin-transform-runtime", {
+      "corejs": {
+        "version": 3,
+        "proposals": true
+      }
+    }]
   ]
 }
