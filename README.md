@@ -10,7 +10,7 @@
 - [x] 单元测试
 - [x] 别名
 - [x] 包大小监控
-- [x] babel
+- [x] babel(polyfill)
 - [x] 代码混淆与最小化
 - [x] CommonJS 模块支持
 - [x] 自动移除垃圾代码
