@@ -2,7 +2,7 @@
   "presets": [
     "@babel/preset-typescript",
     ["@babel/preset-env", {
-      "debug": true
+      // "debug": true // 根据需要是否开启日志
     }]
   ],
   "plugins": [

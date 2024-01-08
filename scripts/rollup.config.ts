@@ -10,6 +10,8 @@ import terser from '@rollup/plugin-terser'
 import pkg from '../package.json'
 import clear from 'rollup-plugin-clear'
 import strip from '@rollup/plugin-strip'
+import replace from '@rollup/plugin-replace'
+import config from './config'
 
 export default defineConfig({
   input: 'src/index.ts',
@@ -25,24 +27,34 @@ export default defineConfig({
         '@': path.resolve(__dirname, '../src')
       }
     }),
-    clear({
+    config.isProdMode && clear({
       targets: ['dist'],
     }),
     commonjs(),
     ts(),
-    babel({
+    config.isProdMode && config.useBabel && babel({
       exclude: ['node_modules'],
       babelHelpers: 'runtime',
       extensions: ['.ts'],
     }),
     // 去除console.log
-    strip({
+    config.isProdMode && strip({
       include: 'src/**/*.{ts,js}'
     }),
+    // 替换环境变量
+    replace({
+      preventAssignment: true,
+      values: {
+        ...(Object.entries(config.env).reduce((all, [key, value]) => {
+          all[`process.env.${key}`] = JSON.stringify(value)
+          return all
+        }, {}))
+      }
+    }),
     // 生成包大小监控
-    sizes(100),
+    config.isProdMode && sizes(100),
     // 代码混淆
-    // terser(),
+    config.isProdMode && terser(),
     // 警告声
     beep(),
   ],
