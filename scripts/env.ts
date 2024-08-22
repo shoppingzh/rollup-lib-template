@@ -5,7 +5,7 @@ import fs from 'fs'
 const env = process.env.NODE_ENV
 const filepath = path.resolve(__dirname, `../.env.${env}`)
 
-let config: Record<string, any> = Object.create(null)
+let config: Record<string, unknown> = Object.create(null)
 
 if (filepath && fs.existsSync(filepath)) {
   config = dotenv.parse(fs.readFileSync(filepath, { encoding: 'utf8' }))
